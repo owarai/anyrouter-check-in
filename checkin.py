@@ -19,6 +19,9 @@ import httpx
 from cloakbrowser import launch_async
 from dotenv import load_dotenv
 
+# 先加载环境变量，再导入依赖它的模块
+load_dotenv()
+
 from utils.browser import (
 	BrowserLoginResult,
 	has_session_cookie,
@@ -37,8 +40,6 @@ from utils.config import AccountConfig, AppConfig, load_accounts_config
 from utils.debug import debug_print, is_debug_enabled
 from utils.notify import notify
 from utils.proxy import get_playwright_proxy, get_proxy_server
-
-load_dotenv()
 
 BALANCE_HASH_FILE = 'balance_hash.txt'
 
